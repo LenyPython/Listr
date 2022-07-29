@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,8 +26,9 @@ public class Project {
     private Long id;
     @NonNull
     private String name;
-    // @OneToOne
-    // private User owner;
+    @ManyToOne
+    @JoinColumn(name = "project_id", nullable = false)
+    private User owner;
     // private Set<User> team;
     // private Set<Epic> epics;
 

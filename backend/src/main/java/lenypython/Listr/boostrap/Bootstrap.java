@@ -26,6 +26,7 @@ public class Bootstrap implements CommandLineRunner {
         Project firstProject = new Project();
         Epic fEpic = new Epic("First Story");
 
+        firstProject.setOwner(firstUser);
         userRepository.save(firstUser);
         projectRepository.save(firstProject);
         epicRepository.save(fEpic);
