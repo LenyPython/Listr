@@ -1,19 +1,12 @@
 package lenypython.Listr.Project;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-import lenypython.Listr.User.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+
 
 @Entity
 @Data
@@ -26,10 +19,7 @@ public class Project {
     private Long id;
     @NonNull
     private String name;
-    @ManyToOne
-    @JoinColumn(name = "project_id", nullable = false)
-    private User owner;
-    // private Set<User> team;
-    // private Set<Epic> epics;
+    @NonNull
+    private String owner;
 
 }
