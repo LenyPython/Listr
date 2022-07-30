@@ -1,31 +1,13 @@
 package lenypython.Listr.Account;
 
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-@AllArgsConstructor
-public class AccountService {
+public interface AccountService {
+  List<Account> getAllUsers();
 
-  private final AccountRepository accountRepository;
+  Optional<Account> getUserById(Long numId);
 
-  public List<Account> getAllUsers() {
-    return this.accountRepository.findAll();
-  }
-
-  public Optional<Account> getUserById(Long id) {
-    return this.accountRepository.findById(id);
-  }
-
-  //public Account getUserByEmail(String email) {
-  //  return this.accountRepository.findOne(email);
-  //}
-
-  public void createUser(Account user) {
-    this.accountRepository.save(user);
-  }
-
+  Account createUser(Account account);
 }

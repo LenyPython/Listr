@@ -31,11 +31,17 @@ public class AccountController {
   }
 
   @PostMapping("/create")
-  private void createUser(@RequestBody Account account) {
+  private Account createUser(@RequestBody Account account) {
     Optional<Account> accOptional = accountService.getUserById(account.getId());
     if(!accOptional.isPresent()) {
       this.accountService.createUser(account);
     }
+    return account;
+  }
+
+  @DeleteMapping("/remove/{id}")
+  private String deleteUser(@RequestParam String id) {
+
   }
 
 }
