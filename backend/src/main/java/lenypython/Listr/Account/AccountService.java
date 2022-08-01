@@ -10,4 +10,8 @@ public interface AccountService {
   Optional<Account> getUserById(Long numId);
 
   Account createUser(Account account);
+
+  Account updateUser(Account account);
+
+  String deleteUserById(String id);
 }
