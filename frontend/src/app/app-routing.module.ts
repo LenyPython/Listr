@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardPage } from './pages/dashboard/dashboard.component';
+import { HomePage } from './pages/home/home.component';
+import { LoginPage } from './pages/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: RegisterFormComponent },
-  { path: 'home', component: DashboardComponent },
+  { path: '', component: HomePage },
+  { path: 'home', component: HomePage },
+  { path: 'login', component: LoginPage },
+  { path: 'dashboard', component: DashboardPage },
   { path: '**', component: PageNotFoundComponent },
 ];
 
