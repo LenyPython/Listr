@@ -1,29 +1,58 @@
 <div [ngClass]="['flex', 'flex-col', 'items-center']">
-    <h2 [ngClass]="['text-3xl', 'mb-8']">Sign in</h2>
-    <form [ngClass]="['flex', 'flex-col', 'content-center', 'w-80']">
-        <label for="login" [ngClass]="['block']">
-            <span [ngClass]="['mt-3','ml-3', 'block', 'text-md', 'font-medium', 'text-slate-700']">
-                Login
-            </span>
-            <input type="text" name="login" 
-            [ngClass]="['input-primary']"
-            placeholder="Login or email" required>
-        </label>
-        <label for="password" [ngClass]="['block']">
-            <span [ngClass]="['mt-3','ml-3', 'block', 'text-md', 'font-medium', 'text-slate-700']">
-                Password
-            </span>
-            <input type="password" name="password" 
-            [ngClass]="['input-primary']"
-            placeholder="Password..."required>
-        </label>
-        <div [ngClass]="['pl-2', 'mt-4', 'flex', 'justify-between']">
-            <a routerLink="/register" [ngClass]="['text-violet-500','hover:text-violet-300']">
-                Not have account yet?
-            </a>
-            <button type="submit" [ngClass]="['btn-primary']">
-                Login
-            </button>
-        </div>
-    </form>
+  <h2 [ngClass]="['text-3xl', 'mb-8']">Sign in</h2>
+  <form
+    [formGroup]="form"
+    [ngClass]="['flex', 'flex-col', 'content-center', 'w-80']"
+    (ngSubmit)="onSubmit()"
+  >
+    <label for="login" [ngClass]="['block']">
+      <span
+        [ngClass]="[
+          'mt-3',
+          'ml-3',
+          'block',
+          'text-md',
+          'font-medium',
+          'text-slate-700'
+        ]"
+      >
+        Login or email
+      </span>
+      <input
+        type="text"
+        formControlName="login"
+        [ngClass]="['input-primary']"
+        placeholder="Login or email"
+      />
+    </label>
+    <label for="password" [ngClass]="['block']">
+      <span
+        [ngClass]="[
+          'mt-3',
+          'ml-3',
+          'block',
+          'text-md',
+          'font-medium',
+          'text-slate-700'
+        ]"
+      >
+        Password
+      </span>
+      <input
+        type="password"
+        formControlName="password"
+        [ngClass]="['input-primary']"
+        placeholder="Password..."
+      />
+    </label>
+    <div [ngClass]="['pl-2', 'mt-4', 'flex', 'justify-between']">
+      <a
+        routerLink="/register"
+        [ngClass]="['text-violet-500', 'hover:text-violet-300']"
+      >
+        Not have account yet?
+      </a>
+      <button type="submit" [ngClass]="['btn-primary']">Sign In</button>
+    </div>
+  </form>
 </div>
