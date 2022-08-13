@@ -1,5 +1,9 @@
-<h2 [ngClass]="['text-4xl']">Register</h2>
 
+<div [ngClass]="['flex', 'flex-col', 'items-center']">
+<h2 [ngClass]="['text-4xl']">Sign up</h2>
+<a routerLink="/login" [ngClass]="['mt-3', 'text-violet-600', 'hover:text-violet-400', 'text-lg']">
+    Already have an account?
+</a>
 <form [ngClass]="['flex', 'flex-col', 'w-80']">
     <label for="login">
         <span [ngClass]="['mt-3','ml-3', 'block', 'text-md', 'font-medium', 'text-slate-700']">
@@ -23,8 +27,6 @@
         <button type="submit" [ngClass]="['btn-primary']">
             Register
         </button>
-        <a routerLink="/login" [ngClass]="['text-violet-600', 'hover:text-violet-400', 'text-lg']">
-            back
-        </a>
     </div>
 </form>
+</div>
