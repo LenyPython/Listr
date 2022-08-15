@@ -1,32 +1,95 @@
-
 <div [ngClass]="['flex', 'flex-col', 'items-center']">
-<h2 [ngClass]="['text-4xl']">Sign up</h2>
-<a routerLink="/login" [ngClass]="['mt-3', 'text-violet-600', 'hover:text-violet-400', 'text-lg']">
+  <h2 [ngClass]="['text-4xl']">Sign up</h2>
+  <a
+    routerLink="/login"
+    [ngClass]="['mt-3', 'text-violet-600', 'hover:text-violet-400', 'text-lg']"
+  >
     Already have an account?
-</a>
-<form [ngClass]="['flex', 'flex-col', 'w-80']">
+  </a>
+  <form
+    [formGroup]="form"
+    [ngClass]="['flex', 'flex-col', 'w-80']"
+    (ngSubmit)="onSubmit()"
+  >
     <label for="login">
-        <span [ngClass]="['mt-3','ml-3', 'block', 'text-md', 'font-medium', 'text-slate-700']">
-            Login
-        </span>
-        <input required type="text" name="login" [ngClass]="['input-primary']" placeholder="Login...">
+      <span
+        [ngClass]="[
+          'mt-3',
+          'ml-3',
+          'block',
+          'text-md',
+          'font-medium',
+          'text-slate-700'
+        ]"
+      >
+        Login
+      </span>
+      <input
+        type="text"
+        formControlName="login"
+        [ngClass]="['input-primary']"
+        placeholder="Login..."
+      />
     </label>
     <label for="email">
-        <span [ngClass]="['mt-3','ml-3', 'block', 'text-md', 'font-medium', 'text-slate-700']">Email</span>
-        <input required type="email" name="email" [ngClass]="['input-primary']" placeholder="Email...">
+      <span
+        [ngClass]="[
+          'mt-3',
+          'ml-3',
+          'block',
+          'text-md',
+          'font-medium',
+          'text-slate-700'
+        ]"
+        >Email</span
+      >
+      <input
+        type="email"
+        formControlName="email"
+        [ngClass]="['input-primary']"
+        placeholder="Email..."
+      />
     </label>
     <label for="password1">
-        <span [ngClass]="['mt-3','ml-3', 'block', 'text-md', 'font-medium', 'text-slate-700']">Password</span>
-        <input required type="password" name="password1" [ngClass]="['input-primary']" placeholder="Password...">
+      <span
+        [ngClass]="[
+          'mt-3',
+          'ml-3',
+          'block',
+          'text-md',
+          'font-medium',
+          'text-slate-700'
+        ]"
+        >Password</span
+      >
+      <input
+        type="password"
+        formControlName="password1"
+        [ngClass]="['input-primary']"
+        placeholder="Password..."
+      />
     </label>
     <label for="password2">
-        <span [ngClass]="['mt-3','ml-3', 'block', 'text-md', 'font-medium', 'text-slate-700']">Repeat Password</span>
-        <input required type="password" name="password2" [ngClass]="['input-primary']" placeholder="Repeat Password...">
+      <span
+        [ngClass]="[
+          'mt-3',
+          'ml-3',
+          'block',
+          'text-md',
+          'font-medium',
+          'text-slate-700'
+        ]"
+        >Repeat Password</span
+      >
+      <input
+        type="password"
+        formControlName="password2"
+        [ngClass]="['input-primary']"
+        placeholder="Repeat Password..."
+      />
     </label>
     <div [ngClass]="['mt-4', 'flex', 'items-center', 'justify-around']">
-        <button type="submit" [ngClass]="['btn-primary']">
-            Register
-        </button>
+      <button type="submit" [ngClass]="['btn-primary']">Register</button>
     </div>
-</form>
+  </form>
 </div>
