@@ -1,8 +1,9 @@
 import { AUTH_ACTIONS } from './types';
 import { createAction, props } from '@ngrx/store';
-import { RegisterCredentials } from '../authModule/types';
+
+import { RegisterCredentials } from 'src/app/authModule/types/auth.interface';
 
 export const registerAction = createAction(
   AUTH_ACTIONS.REGISTER,
-  props<RegisterCredentials>()
+  props<{ request: RegisterCredentials }>()
 );

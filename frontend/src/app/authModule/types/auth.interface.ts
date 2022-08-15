@@ -1,3 +1,10 @@
+export interface CurrentUserInterface {
+  id: number;
+  email: string;
+  login?: string;
+  imageUrl?: string;
+}
+
 export interface RegisterCredentials {
   login: string;
   email: string;
