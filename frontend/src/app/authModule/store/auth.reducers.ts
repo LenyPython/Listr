@@ -6,7 +6,8 @@ import { AuthStateInterface } from 'src/app/authModule/types/store.interface';
 const initialState: AuthStateInterface = {
   id: 0,
   email: '',
-  isSubmitting: false,
+  isRegisterSubmitting: false,
+  isLoginSubmitting: false,
 };
 
 export const authReducer = createReducer(
