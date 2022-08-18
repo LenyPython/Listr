@@ -10,12 +10,14 @@ import { NavigationModule } from 'src/app/navigationModule/navigation.module';
 import { PageNotFoundModule } from 'src/app/pageNotFoundModule/pageNotFound.module';
 import { HomeModule } from 'src/app/homeModule/home.module';
 import { AuthModule } from 'src/app/authModule/auth.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     HomeModule,
     AuthModule,
     PageNotFoundModule,

@@ -52,7 +52,13 @@
       >
         Not have account yet?
       </a>
-      <button type="submit" [ngClass]="['btn-primary']">Sign In</button>
+      <button
+        type="submit"
+        [ngClass]="['btn-primary']"
+        [disabled]="isLoginSubmitting$ | async"
+      >
+        Sign In
+      </button>
     </div>
   </form>
 </div>

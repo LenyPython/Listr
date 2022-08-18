@@ -8,7 +8,7 @@ import { reducer } from 'src/app/authModule/store/auth.reducers';
 import { LoginComponent } from 'src/app/authModule/components/login/login.component';
 import { RegisterComponent } from 'src/app/authModule/components/register/register.component';
 
-const AUTH_REDUCER_KEY = 'AUTH_MOD_REDUCER';
+export const AUTH_REDUCER_KEY = 'AUTH_REDUCER_KEY';
 
 const routes = [
   {

@@ -89,7 +89,13 @@
       />
     </label>
     <div [ngClass]="['mt-4', 'flex', 'items-center', 'justify-around']">
-      <button type="submit" [ngClass]="['btn-primary']">Register</button>
+      <button
+        type="submit"
+        [ngClass]="['btn-primary']"
+        [disabled]="isRegSubmitting$ | async"
+      >
+        Register
+      </button>
     </div>
   </form>
 </div>

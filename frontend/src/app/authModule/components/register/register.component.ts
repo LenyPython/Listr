@@ -1,9 +1,11 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import { registerAction } from 'src/app/authModule/store/auth.actions';
+import { isRegSubmittingSelector } from '../../store/auth.selectors';
 
 @Component({
   templateUrl: './register.component.html',
@@ -12,10 +14,15 @@ import { registerAction } from 'src/app/authModule/store/auth.actions';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({});
+  isRegSubmitting$: Observable<boolean> = new Observable();
 
   constructor(private formBuilder: FormBuilder, private store: Store) {}
   ngOnInit(): void {
     this.initializeForm();
+    this.initializeValues();
+  }
+  initializeValues(): void {
+    this.isRegSubmitting$ = this.store.pipe(select(isRegSubmittingSelector));
   }
 
   initializeForm(): void {
