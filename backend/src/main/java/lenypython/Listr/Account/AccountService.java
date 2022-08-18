@@ -14,4 +14,6 @@ public interface AccountService {
   Account updateUser(Account account);
 
   String deleteUserById(String id);
+
+  Optional<Account> getUserByEmail(String email);
 }

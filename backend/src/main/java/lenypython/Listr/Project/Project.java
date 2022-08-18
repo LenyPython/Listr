@@ -1,25 +1,30 @@
 package lenypython.Listr.Project;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 
 @Entity
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name = "project")
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @NonNull
+    @NotBlank(message = "Project needs to have a name")
     private String name;
-    @NonNull
+    @NotBlank(message = "Project needs to have an owner")
     private String owner;
 
 }

@@ -19,8 +19,15 @@ public class Bootstrap implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Account firstUser = new Account("Alan", "Joe", "email@Emil.com");
-        Project firstProject = new Project("Listr", firstUser.getName());
+        Account firstUser = new Account().builder()
+           .name("Bob")
+           .secondName("Builder")
+           .email("bob@email.com")
+           .build();
+        Project firstProject = new Project().builder()
+           .owner(firstUser.getName())
+           .name("First Project")
+           .build();
 
         accountRepository.save(firstUser);
         projectRepository.save(firstProject);

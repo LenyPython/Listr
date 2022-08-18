@@ -27,7 +27,16 @@ public class AccountController {
     } else {
       throw new NullPointerException("No such user exists");
     }
+  }
 
+  @GetMapping("/email/{email}")
+  private Account getUserByEmail(@RequestParam String email) throws NullPointerException {
+      Optional<Account> accOptional = this.accountService.getUserByEmail(email);
+      if(accOptional.isPresent()){
+        return accOptional.get();
+      } else {
+        throw  new NullPointerException("No user with such email exists");
+      }
   }
 
   @PostMapping("/create")
@@ -40,7 +49,7 @@ public class AccountController {
     return this.accountService.updateUser(account);
   }
 
-  @DeleteMapping("/remove/{id}")
+  @DeleteMapping("/{id}")
   private String deleteUser(@RequestParam String id) {
 
     return this.accountService.deleteUserById(id);
