@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
-import { registerAction } from 'src/app/authModule/store/actions';
+import { registerAction } from 'src/app/authModule/store/auth.actions';
 
 @Component({
   templateUrl: './register.component.html',

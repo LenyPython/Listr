@@ -1,4 +1,4 @@
-import { AUTH_ACTIONS } from './types';
+import { AUTH_ACTIONS } from './auth.types';
 import { createAction, props } from '@ngrx/store';
 
 import { RegisterCredentials } from 'src/app/authModule/types/auth.interface';
