@@ -21,13 +21,16 @@ export class RegisterComponent implements OnInit {
     this.initializeForm();
     this.initializeValues();
   }
+
   initializeValues(): void {
     this.isRegSubmitting$ = this.store.pipe(select(isRegSubmittingSelector));
   }
 
   initializeForm(): void {
     this.form = this.formBuilder.group({
-      login: ['', Validators.required],
+      login: [''],
+      name: ['', Validators.required],
+      secondName: ['', Validators.required],
       email: ['', Validators.required],
       password1: ['', Validators.required],
       password2: ['', Validators.required],

@@ -6,6 +6,8 @@ import { AuthStateInterface } from './auth.types';
 const initialState: AuthStateInterface = {
   id: 0,
   email: '',
+  name: '',
+  secondName: '',
   isRegisterSubmitting: false,
   isLoginSubmitting: false,
 };

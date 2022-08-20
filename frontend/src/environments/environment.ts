@@ -4,8 +4,15 @@
 
 export const environment = {
   production: false,
-  api: 'http://loclalhost:8080/api/',
-  register: 'add',
+  api: 'http://loclalhost:8080/api_v1',
+  endpoints: {
+    getUsers: '/user/users',
+    getUser: '/user/',
+    getUserByEmail: '/user/email/',
+    createUser: '/user/create',
+    updateUser: '/user/update',
+    deleteUser: '/user/',
+  },
 };
 
 /*
