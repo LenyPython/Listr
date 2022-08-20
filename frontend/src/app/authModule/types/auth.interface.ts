@@ -11,7 +11,12 @@ export interface AuthResponseInterface {
   user: CurrentUserInterface;
 }
 
-export interface RegisterRequestInterface extends CurrentUserInterface {
+export interface RegisterUserInterface
+  extends Omit<CurrentUserInterface, 'id' | 'imageUrl'> {
   password1: string;
   password2: string;
+}
+
+export interface RegisterRequestInterface {
+  request: RegisterUserInterface;
 }

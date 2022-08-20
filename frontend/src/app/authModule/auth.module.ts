@@ -1,3 +1,4 @@
+import { EffectsModule } from '@ngrx/effects';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -7,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { reducer } from 'src/app/authModule/store/auth.reducers';
 import { LoginComponent } from 'src/app/authModule/components/login/login.component';
 import { RegisterComponent } from 'src/app/authModule/components/register/register.component';
+import { RegisterEffect } from 'src/app/authModule/store/auth.effects';
 
 export const AUTH_REDUCER_KEY = 'AUTH_REDUCER_KEY';
 
@@ -24,6 +26,7 @@ const routes = [
   imports: [
     CommonModule,
     StoreModule.forFeature(AUTH_REDUCER_KEY, reducer),
+    EffectsModule.forFeature([RegisterEffect]),
     RouterModule.forChild(routes),
     ReactiveFormsModule,
   ],

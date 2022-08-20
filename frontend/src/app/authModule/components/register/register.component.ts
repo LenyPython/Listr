@@ -1,3 +1,4 @@
+import { RegisterRequestInterface } from 'src/app/authModule/types/auth.interface';
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -37,6 +38,9 @@ export class RegisterComponent implements OnInit {
     });
   }
   onSubmit(): void {
-    this.store.dispatch(registerAction(this.form.value));
+    const request: RegisterRequestInterface = {
+      request: this.form.value,
+    };
+    this.store.dispatch(registerAction({ request }));
   }
 }

@@ -12,6 +12,7 @@ import { PageNotFoundModule } from 'src/app/pageNotFoundModule/pageNotFound.modu
 import { HomeModule } from 'src/app/homeModule/home.module';
 import { AuthModule } from 'src/app/authModule/auth.module';
 import { AuthService } from 'src/app/authModule/service/auth.service';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { AuthService } from 'src/app/authModule/service/auth.service';
       maxAge: 25,
       logOnly: environment.production,
     }),
+    EffectsModule.forRoot([]),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
