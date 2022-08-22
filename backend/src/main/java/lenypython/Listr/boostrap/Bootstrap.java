@@ -20,6 +20,7 @@ public class Bootstrap implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Account firstUser = new Account().builder()
+           .id(0L)
            .name("Bob")
            .secondName("Builder")
            .email("bob@email.com")

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api_v1/user/")
 @AllArgsConstructor
@@ -38,10 +39,9 @@ public class AccountController {
         throw  new NullPointerException("No user with such email exists");
       }
   }
-
   @PostMapping("/create")
-  private Account createUser(@RequestBody Account account) {
-    return this.accountService.createUser(account);
+  private Account createUser(@RequestBody RegisterRequest userRequest) {
+    return this.accountService.createUser(userRequest);
   }
 
   @PostMapping("/update")

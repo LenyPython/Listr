@@ -9,7 +9,7 @@ public interface AccountService {
 
   Optional<Account> getUserById(Long numId);
 
-  Account createUser(Account account);
+  Account createUser(RegisterRequest newUser);
 
   Account updateUser(Account account);
 

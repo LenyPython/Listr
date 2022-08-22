@@ -22,6 +22,7 @@ import lombok.NoArgsConstructor;
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @NotBlank(message = "Project needs to have a name")
     private String name;
     @NotBlank(message = "Project needs to have an owner")

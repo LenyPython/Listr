@@ -55,11 +55,18 @@ public class AccountServiceImpl implements AccountService {
     }
   }
 
-  public Account createUser(@RequestBody Account user) throws IllegalArgumentException {
-    Optional<Account> accOptional = this.accountRepository.findById(user.getId());
+  public Account createUser(RegisterRequest newUser) throws IllegalArgumentException {
+    Optional<Account> accOptional = this.accountRepository.findByEmail(newUser.getEmail());
     if(accOptional.isPresent()) {
       throw new IllegalArgumentException("Such user already exists!");
     }
+    Account user = new Account().builder()
+       .id(0L)
+       .name(newUser.getName())
+       .secondName(newUser.getSecondName())
+       .email(newUser.getEmail())
+       .build();
+
     return this.accountRepository.save(user);
   }
 

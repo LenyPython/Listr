@@ -1,4 +1,11 @@
 package lenypython.Listr.Account;
 
-public interface RegisterRequest {
+import lombok.Data;
+
+@Data
+public class RegisterRequest {
+  String name;
+  String secondName;
+  String email;
+  String login;
 }
