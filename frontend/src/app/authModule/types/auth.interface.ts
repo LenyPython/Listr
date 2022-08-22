@@ -20,3 +20,7 @@ export interface RegisterUserInterface
 export interface RegisterRequestInterface {
   request: RegisterUserInterface;
 }
+
+export interface BackendErrorsInterface {
+  [key: string]: string;
+}

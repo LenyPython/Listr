@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://loclalhost:8080/api_v1',
+  api: '/api_v1',
   endpoints: {
     getUsers: '/user/users',
     getUser: '/user/',
