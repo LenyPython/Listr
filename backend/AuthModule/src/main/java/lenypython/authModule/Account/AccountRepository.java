@@ -1,4 +1,4 @@
-package lenypython.Listr.Account;
+package lenypython.authModule.Account;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

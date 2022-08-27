@@ -1,4 +1,4 @@
-package lenypython.Listr.Account;
+package lenypython.authModule.Account;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package lenypython.Listr.Project;
+package Project;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

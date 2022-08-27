@@ -1,4 +1,4 @@
-package lenypython.Listr.Account;
+package lenypython.authModule.Account;
 
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package lenypython.Listr.Account;
+package lenypython.authModule.Account;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

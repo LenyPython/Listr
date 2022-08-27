@@ -1,4 +1,4 @@
-package lenypython.Listr.Project;
+package Project;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -4,31 +4,47 @@ plugins {
 	id 'java'
 }
 
-group = 'lenypython'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+}
+allprojects {
+	group = 'lenypython'
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = '17'
+
+	configurations {
+		compileOnly.extendsFrom annotationProcessor
+		testCompileOnly.extendsFrom annotationProcessor
+		testAnnotationProcessor.extendsFrom AnnotationProcessor
+	}
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+		implementation 'org.springframework.boot:spring-boot-starter-web'
+		//implementation 'org.springframework.boot:spring-boot-starter-security'
+		implementation 'org.springframework.boot:spring-boot-starter-mail'
+		implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.2'
+		compileOnly 'org.projectlombok:lombok'
+		developmentOnly 'org.springframework.boot:spring-boot-devtools'
+		runtimeOnly 'org.postgresql:postgresql'
+		annotationProcessor 'org.projectlombok:lombok'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		//testImplementation 'org.springframework.security:spring-security-test'
+	}
+
+	task('helo').doLast {
+		println "String cat $project.name"
+	}
+	tasks.named('test') {
+		useJUnitPlatform()
 	}
 }
 
-repositories {
-	mavenCentral()
-}
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.2'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.postgresql:postgresql'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
-}

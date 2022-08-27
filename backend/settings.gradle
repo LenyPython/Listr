@@ -1,1 +1,6 @@
 rootProject.name = 'Listr'
+
+
+include 'ProjectsModule'
+include 'AuthModule'
+

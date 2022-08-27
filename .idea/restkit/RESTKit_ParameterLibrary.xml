@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RESTKit_ParameterLibrary">
+    <option name="parameterMap">
+      <map>
+        <entry key="Body">
+          <value>
+            <map>
+              <entry key="POST_/api_v1/user/create">
+                <value>
+                  <list>
+                    <KV>
+                      <option name="key" value="parameter1" />
+                      <option name="value" value="{&#10;  &quot;name&quot;: &quot;as&quot;,&#10;  &quot;secondName&quot;: &quot;as&quot;,&#10;  &quot;email&quot;: &quot;a&quot;,&#10;  &quot;login&quot;: &quot;a&quot;&#10;}" />
+                    </KV>
+                  </list>
+                </value>
+              </entry>
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
